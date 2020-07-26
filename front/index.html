@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/table.css" />
+    <title>URL Shortener</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <nav>
+          <ul class="navMenu">
+            <li class="logo"><h2>URL SHORTENER</h2></li>
+          </ul>
+        </nav>
+      </header>
+      <section class="tabs" id="tabs">
+        <div class="tab active" id="tabCreate">CREATE</div>
+        <div class="tab" id="tabList">LIST</div>
+      </section>
+      <section class="mainContent">
+        <article class="urlCreate">
+          <div class="column">
+            <p class="label">CUSTOM URL TEXT RESTRICTIONS</p>
+            <div class="row">
+              <div i class="content contentPrimary">
+                <ul>
+                  <li>Allowed Characters: 0-9, a-z, A-Z, -, _</li>
+                  <li>Min Length: 3</li>
+                  <li>Max Length: 30</li>
+                </ul>
+              </div>
+            </div>
+            <div class="errorMessageFrom" id="previewMessage"></div>
+          </div>
+          <div class="column">
+            <label for="customTextInput">CUSTOM URL TEXT</label>
+            <div class="row">
+              <input
+                type="text"
+                name="customTextInput"
+                id="customTextInput"
+                minlength="3"
+                maxlength="30"
+                autocomplete="off"
+              />
+              <button id="genUrlBtn" class="button">GENERATE</button>
+            </div>
+
+            <div class="errorMessageFrom" id="customTextMessage"></div>
+          </div>
+          <div class="column">
+            <label for="destinationUrl">DESTINATION URL</label>
+            <div class="row">
+              <textarea
+                type="text"
+                name="destinationUrl"
+                id="destinationUrlInput"
+                rows="3"
+                class="urlInput"
+                autocomplete="off"
+              ></textarea>
+            </div>
+            <div class="errorMessageFrom" id="destUrlMessage"></div>
+          </div>
+          <div class="column">
+            <p class="label">PREVIEW</p>
+            <div class="row">
+              <div id="previewUrl" class="content contentPrimary"></div>
+              <button class="button" id="saveBtn">SAVE</button>
+            </div>
+            <div class="errorMessageFrom" id="previewMessage"></div>
+          </div>
+          <div class="row feedbackRow">
+            <div class="isHidden content" id="feedbackMessage"></div>
+          </div>
+          <div class="column">
+            <p class="label">RECENTLY CREATED</p>
+            <div class="row">
+              <div class="content contentPrimary">
+                <div id="recentsList" class="column">
+                  Recently saved links will appear here. <br />All saved links
+                  can be viewed from the list tab above.
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="urlList isHidden"></article>
+      </section>
+    </main>
+    <script src="scripts/env.js"></script>
+    <script src="scripts/script.js"></script>
+  </body>
+</html>

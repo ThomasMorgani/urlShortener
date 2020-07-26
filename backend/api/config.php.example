@@ -1,0 +1,42 @@
+<?php
+
+    $settings = [
+        'chars' => [
+            'all' => 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890-_',
+            'int' => '1234567890',
+            'lower' => 'abcdefghijklmnopqrstuvwxyz',
+            'upper' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+            'symbol' => '-_'
+        ],
+        'cors' => [
+            'allowed' => [
+            ]
+        ],
+        'db' => [
+            'connection' => null,
+            'dbhost' => '',
+            'dbuser' => '',
+            'dbpasswd' => '',
+            'dbname' => '',
+            'dbtable' => 'urlShortener',
+        ],
+        'messages' => [
+            'dbErr' => 'Unable to connect to database',
+            'destInvalid' => 'Destination Url missing or invalid.',
+            'slugGenErr' => 'Unable to generate text based on current paramaters. Please try again or increase length requirement.',
+            'slugInvalid' => 'Custom Uri text missing or invalid.',
+            'urlSaveErr' => 'Unable to save to database.',
+            'urlSaveSuccess' => 'New Url Saved.'
+
+        ],
+        'slug' => [
+            'defaultLength' => 5,
+            'minLength' => 3, 
+            'maxLength' => 30
+        ]
+    ];
+    
+    $db = mysqli_connect(...$settings['db']) or die($settings['messages']['dbErr']);
+  
+
+?>

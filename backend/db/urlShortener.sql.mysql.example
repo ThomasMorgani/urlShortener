@@ -1,0 +1,10 @@
+CREATE TABLE `urlShortener` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `redirectUrl` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `uriText` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `visitCount` bigint(20) NOT NULL DEFAULT '1',
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `lastVisit` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uriText` (`uriText`)
+) 

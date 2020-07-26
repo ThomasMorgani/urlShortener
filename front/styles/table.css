@@ -1,0 +1,52 @@
+/* https://github.com/milligram/milligram/blob/master/dist/milligram.css  */
+table {
+  border-spacing: 0;
+  display: block;
+  overflow-x: auto;
+  text-align: left;
+  width: 100%;
+  padding: 0em 1em;
+}
+
+td,
+th {
+  border-bottom: 0.1rem solid var(--primary-bg);
+  padding: 0.5rem 1rem;
+  color: var(--primary-color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 10rem;
+}
+
+td:hover {
+  overflow: visible;
+  background-color: white;
+  white-space: unset;
+  overflow: visible;
+  text-overflow: unset;
+  word-wrap: anywhere;
+}
+
+td:first-child,
+th:first-child {
+  padding-left: 0;
+}
+
+td:last-child,
+th:last-child {
+  padding-right: 0;
+}
+
+td.noData {
+  padding: 2rem;
+  text-align: center;
+  vertical-align: middle;
+}
+
+@media (min-width: 40rem) {
+  table {
+    display: table;
+    overflow-x: initial;
+  }
+}

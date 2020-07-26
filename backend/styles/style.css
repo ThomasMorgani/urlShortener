@@ -1,0 +1,32 @@
+.isHidden {
+  display: none;
+}
+
+.actionSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 10rem;
+  padding: 2rem;
+}
+
+.cancelBtn {
+  background: #b90606;
+  display: inline-block;
+  color: white;
+  width: 8rem;
+  margin: 1.5rem;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: bold;
+}
+
+.destUrlSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}

@@ -1,0 +1,47 @@
+<?php
+    $dbsettings = [
+
+            'dbhost' ,       //dbhost,
+            'dbuser' ,        //dbuser,
+            'dbpasswd' ,    //dbpasswd,
+            'dbname'        //dbname,
+    
+    ];
+    
+    $destUrl = '';
+
+    function connectDb($dbsettings) {
+        $db = new mysqli(...$dbsettings);
+        if($db->connect_errno > 0){
+            die('Unable to connect to database [' . $db->connect_error . ']');
+        }
+        return $db;
+    };
+
+    function parseData($dbsettings) {
+        $redirData = [];
+        if (isset($_GET['p'])) {
+            $redirData['redirectUrl'] = $_GET['p'];
+        } else {
+            $db = connectDb($dbsettings);
+            $urlArr = explode('/', $_SERVER['REQUEST_URI']);
+            if (isset($urlArr['2'])) {
+                $uriText = $urlArr['2'];
+                $result = $db->query("SELECT * FROM `urlShortener` WHERE `uriText` = '$uriText' ORDER BY `id`");
+                $redirData = $result->fetch_array(MYSQLI_ASSOC);
+            }
+        }
+        return $redirData; 
+    }
+
+    function logVisit($dbsettings, $id) {
+        if (!$id) {
+            return;
+        }
+        $db = connectDb($dbsettings);
+        $result = $db->query("UPDATE  `urlShortener`  SET `visitCount`=`visitCount` + 1, `lastVisit`=now() WHERE `id` = '$id';");
+
+    }
+
+
+?>

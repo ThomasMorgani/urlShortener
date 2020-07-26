@@ -1,0 +1,274 @@
+:root {
+  --primary-color: #2c4776;
+  --primary-bg: #2c477611;
+  --secondary-color: #fff;
+  --error-bg: #f0b3b385;
+  --error-color: #9d0808;
+  --success-bg: #c1ffc185;
+  --success-color: #138e13;
+}
+
+html {
+  --scrollbarBG: #cfd8dc;
+  --thumbBG: var(--primary-color);
+}
+
+body {
+  margin: 60px 0em 0em 0em;
+  font-family: Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-color) var(--secondary-color);
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--secondary-color);
+}
+body::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+  border-radius: 6px;
+  border: 3px solid var(--primary-color);
+}
+
+label,
+.label {
+  margin: 1em 0em 0em 1em;
+  display: block;
+  color: var(--primary-color);
+  font-weight: 800;
+}
+
+input,
+textarea {
+  border-style: solid;
+  border-radius: 0.25em;
+  width: 100%;
+  padding: 0.5em;
+  flex-grow: 1;
+}
+
+h2,
+p {
+  margin: 0em;
+}
+
+nav {
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+ul {
+  margin: 0;
+  padding: 0.5em 1em;
+}
+
+section {
+  padding: 2em 1em;
+}
+
+.navMenu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 2em;
+  list-style-type: none;
+}
+
+.navMenu .logo {
+  flex: 1;
+}
+
+.navMenu a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.tabs {
+  margin-top: 3.65em;
+  padding: 0em 0em 0em 1em;
+  display: flex;
+  justify-items: start;
+  align-items: center;
+  border-bottom: solid;
+  border-color: var(--primary-color);
+}
+
+.tab {
+  color: var(--primary-color);
+  font-weight: 600;
+  cursor: pointer;
+  height: 2em;
+  width: 6em;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: larger;
+}
+
+.active {
+  font-weight: 900;
+  background: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.articleCreate {
+  padding-top: 0em;
+  width: 100%;
+}
+
+.articleRecent {
+  padding-top: 0em;
+}
+
+.isHidden {
+  display: none !important;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  height: 100%;
+  min-height: 1em;
+  width: 100%;
+  padding: 0.5em 1em;
+  border-width: 0.05em;
+  border-style: solid;
+  border-radius: 0.25em;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.contentError {
+  border-color: var(--error-color);
+  background: var(--error-bg);
+  color: var(--error-color);
+}
+
+.contentSuccess {
+  border-color: var(--success-color);
+  background: var(--success-bg);
+  color: var(--success-color);
+}
+
+.contentPrimary {
+  justify-content: space-between;
+  border-color: var(--primary-color);
+  background: var(--primary-bg);
+  color: var(--primary-color);
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 40em;
+  min-width: 10em;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-width: 40em;
+  min-width: 10em;
+  width: 100%;
+}
+
+.grow {
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+.shrink {
+  flex-grow: 0;
+  flex-shrink: 1;
+}
+
+.button {
+  height: 2.5em;
+  min-width: 6em;
+  padding: 0.25em;
+  margin: 0em 0.5em;
+  color: var(--secondary-color);
+  background: var(--primary-color);
+  border: none;
+  border-radius: 0.25em;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.errorMessageFrom {
+  margin-top: 0.25em;
+  transition: 0.28s;
+  overflow: hidden;
+  color: var(--error-color);
+  min-height: 1.5em;
+}
+
+.instructions {
+  margin: 2em 0em;
+  padding: 0em 2em;
+}
+
+.feedbackRow {
+  min-height: 3.25em;
+  margin: 1em 0em;
+}
+
+.fadeIn {
+  opacity: 1;
+  animation: fadeIn 2s linear;
+}
+
+.fadeOut {
+  opacity: 0;
+  animation: fadeOut 2s linear;
+}
+
+.feedbackMark {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  margin: 0em 0.5em;
+  padding: 0.25em 0.5em;
+  border-width: 0.15em;
+  border-style: solid;
+  border-radius: 25px;
+  width: 0.75em;
+  height: 100%;
+  font-weight: 900;
+}
+
+.linkIcon {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+/* ANIMATIONS, TRANSITIONS */
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
